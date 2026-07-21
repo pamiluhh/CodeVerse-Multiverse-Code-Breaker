@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-cyber-grid {
+    background-size: 50px 50px;
+    background-image: 
+      linear-gradient(to right, rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  }
+  
+  .bg-cyber-dot-grid {
+    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes slow-pan {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+@keyframes matrix-fade {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+
+.animate-scanline {
+  animation: scanline 12s linear infinite;
+}
+
+.animate-grid-pan {
+  animation: slow-pan 120s linear infinite;
+}
+
+.animate-matrix-glow {
+  animation: matrix-fade 6s ease-in-out infinite;
+}
+
